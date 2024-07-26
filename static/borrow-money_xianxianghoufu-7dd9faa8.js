@@ -8,11 +8,10 @@ fromPageStatus.finishBorrow == true：回app首页或回上一页
     1. if (from.name != '协议页、还款计划页、确认借款页') || (缓存数据已被清除)，页面重走handleInitGetInfo()
     2. else (from.name == '绑卡页面')，调用handleInitGetInfo(true)，获取最新的res.data，其他不走
     3. from.name == 会员绑卡，重新获取是否有卡，判断宝付支付弹窗的 绑卡有礼 是否显示
-`,expand:!0,richText:!1,isActive:!1,uid:"622c3e7a-dde0-4e36-90f6-77ff61ab3a73",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]},{data:{text:`先享后付： 
- 1. firstEnjoy.isClickProtocol ==true，从先享后付协议页面回来，展示先享后付弹窗，并将isClickProtocol = false 
- 2. firstEnjoy.showConfirmDialog = false // bug修复，从立即借款--先享后付挽留弹窗--放弃，到确认借款页，返回上一页，
+`,expand:!0,richText:!1,isActive:!1,uid:"622c3e7a-dde0-4e36-90f6-77ff61ab3a73",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]},{data:{text:`先享后付：
+ 1. firstEnjoy.showConfirmDialog = false // bug修复，从立即借款--先享后付挽留弹窗--放弃，到确认借款页，返回上一页，
      以上操作重复2次以上后，返回申请借款页莫名弹窗挽留弹窗 
-  3. firstEnjoy.isFinishBind = false // 从确认借款页返回后，再提交，没有开启先享后付，还是要挽留一下`,expand:!0,richText:!1,isActive:!1,uid:"4b00150e-69d6-4c23-b863-a29c2ff88c93",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]},{data:{text:"主线",expand:!0,richText:!1,isActive:!1,uid:"b6a7c2e3-b81b-453c-9cee-87c1b2e12518",generalization:[{text:`handleGetBorrowAmountInfo（逻辑同上）
+  2. firstEnjoy.isFinishBind = false // 从确认借款页返回后，再提交，没有开启先享后付，还是要挽留一下`,expand:!0,richText:!1,isActive:!1,uid:"4b00150e-69d6-4c23-b863-a29c2ff88c93",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]},{data:{text:"主线",expand:!0,richText:!1,isActive:!1,uid:"b6a7c2e3-b81b-453c-9cee-87c1b2e12518",generalization:[{text:`handleGetBorrowAmountInfo（逻辑同上）
 
 目标用户：多请求一个接口，获取利率列表：/borrow/rate/type
 `,range:[2,3],uid:"5cf0dc47-b4a7-4820-9445-82e2ec7c03c5",expand:!0,isActive:!1,borderColor:"#AB149E",fillColor:"#AB149E",color:"#FFFFFF"}]},children:[{data:{text:`handleInitGetInfo (hasCache)
@@ -111,22 +110,21 @@ this.handleMemberBorrowTargetUserCard()
 3. 其他字段：展示在从下往上的金尊卡popup`,expand:!0,richText:!1,isActive:!1,uid:"e1e6c7fe-ac78-4948-a86f-34e2a39e843b",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]}]}]},{data:{text:"先享后付",expand:!0,richText:!1,isActive:!1,uid:"99f79983-57b1-4ad6-944d-ab26f0436ecd"},children:[{data:{text:`switch开关关闭：
 1. 请求关闭接口：通知后端用户不要先享后付了
 2. 提交借款：二次挽留弹窗`,uid:"0931132b-f2e0-4674-b3bd-bde0dc371994",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]},{data:{text:`先享后付绑卡
-申请借款、提交结果、首页进入`,expand:!0,richText:!1,isActive:!1,uid:"8e5a2ec2-b530-49ac-82ba-599539c7519d",borderWidth:1,borderColor:"#549688",fillColor:"#fff",generalization:[{text:"共用一个弹窗",range:[0,1],uid:"85b5f155-bcf9-4bac-b8ea-6b4668b31500",expand:!0,isActive:!1}]},children:[{data:{text:`申请借款：
-1. props: bankcardNumber、pageType
-2. 请求接口用bankcardNumber
-3. 协议前端写死链接
-4. 埋点：弹窗曝光埋点、提交埋点（用pageType区分）
-5. 提交完成：firstEnjoy.isFinishBind = true; handleApplyMoney()`,uid:"de59fcdc-4a08-4f48-a6d9-4b37aa839117",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]},{data:{text:`提交结果页：
+申请借款、提交结果、首页进入`,expand:!0,richText:!1,isActive:!1,uid:"8e5a2ec2-b530-49ac-82ba-599539c7519d",borderWidth:1,borderColor:"#549688",fillColor:"#fff",generalization:[{text:`共用一个页面
+相同点：
+1. 协议前端写死链接
+2. 埋点：弹窗曝光埋点、提交埋点（用pageType区分）`,range:[0,2],uid:"ae47d7c3-9ead-47d4-8d9a-81b81d8e7eb1",expand:!0,isActive:!1}]},children:[{data:{text:`申请借款：
+1. route: cardNumber、pageType
+2. 请求接口用cardNumber
+3. 提交完成：firstEnjoy.isFinishBind = true; handleApplyMoney()
+`,uid:"de59fcdc-4a08-4f48-a6d9-4b37aa839117",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]},{data:{text:`提交结果页：
 1. route.query: borrowNo、pageType
 2. 请求接口用borrowNo，换bankcardNumber
-3. 协议前端写死链接
-4. 埋点：弹窗曝光埋点、提交埋点（用pageType区分）
-5. 提交完成：关闭webview`,expand:!0,richText:!1,isActive:!1,uid:"a63cf7a5-4b18-4966-bef7-52b378e7dbae",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]},{data:{text:`首页进入新页面（非弹窗）：
+3. 提交完成：回首页
+`,expand:!0,richText:!1,isActive:!1,uid:"a63cf7a5-4b18-4966-bef7-52b378e7dbae",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]},{data:{text:`首页进入先享后付页面：
 1. route.query: borrowNo
 2. 请求接口用borrowNo，换bankcardNumber
-3. 协议前端写死链接
-4. 埋点：弹窗曝光埋点、提交埋点（写死）
-5. 提交完成：关闭webview`,expand:!0,richText:!1,isActive:!1,uid:"af608bee-5443-4683-91ab-9a320a194b2b",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]},{data:{text:`借款结果页的banner
+3.提交完成：关闭webview `,expand:!0,richText:!1,isActive:!1,uid:"af608bee-5443-4683-91ab-9a320a194b2b",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]},{data:{text:`借款结果页的banner
 接口：borrowConfirm/banner
 
 响应字段：
@@ -141,7 +139,7 @@ this.handleMemberBorrowTargetUserCard()
 1. 运营后台-系统配置-会员卡快捷支付
 2. 模式：
    1. 先付后享(金尊卡)（等于借款前置营销页）：杭金投、中原H5、长银H5
-   2. 先享后付(易橙卡)（申请借款页绑卡签约）：杭金投、中原api、长银api
+   2. 先享后付(易橙卡)（申请借款页绑卡签约）：杭金投、中原api、长银api、大兴api
    3. 金尊卡：锡商网贷（申请借款页从下往上弹Popup）、其他api资方（先享后付不开启，展示中间banner弹窗）
    4. 杭金投：有先享后付和先付后享模式，所以杭金投的模式是二选一，因为先享后付和先付后享是互斥关系，假如开关状态选择暂停，进入申请维护页
    5. 小程序：没有会员&&没有先享后付，先享后付通过资源位渠道不可见来控制`,expand:!0,richText:!1,isActive:!1,uid:"db92564f-be6d-4510-8d43-8359b44722ac",borderWidth:1,borderColor:"#333333",fillColor:"#666666",fontWeight:"normal",color:"#FFFFFF"},children:[]}]},{data:{text:"双融担模式",expand:!0,richText:!1,isActive:!1,uid:"f4d7d84f-6207-4cb9-b359-e418dad07165"},children:[{data:{text:`双融担模式：
@@ -184,4 +182,4 @@ res.data.type、res.data.url字段：
 2. type == 2 & url：自有H5
 3. type == 3 & url：原生url
 4. type == 4：回首页
-5. 其他：/borrow/money`,uid:"ac7597e8-e793-4939-96ba-bb8ccb063c92",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]}]}]},a={template:"default",config:{associativeLineTextFontSize:13,root:{fontSize:14},node:{fontSize:13},generalization:{fontSize:13},second:{fontSize:13}}},t={transform:{scaleX:.8999999999999999,scaleY:.8999999999999999,shear:0,rotate:0,translateX:268.652759740256,translateY:-1211,originX:0,originY:0,a:.8999999999999999,b:0,c:0,d:.8999999999999999,e:268.652759740256,f:-1211},state:{scale:.8999999999999999,x:268.652759740256,y:-1211,sx:267.652759740256,sy:-1240}},o={layout:e,root:r,theme:a,view:t};export{o as default,e as layout,r as root,a as theme,t as view};
+5. 其他：/borrow/money`,uid:"ac7597e8-e793-4939-96ba-bb8ccb063c92",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]}]}]},a={template:"default",config:{associativeLineTextFontSize:13,root:{fontSize:14},node:{fontSize:13},generalization:{fontSize:13},second:{fontSize:13}}},t={transform:{scaleX:1,scaleY:1,shear:0,rotate:0,translateX:-66.2500000000008,translateY:-1182.75,originX:0,originY:0,a:1,b:0,c:0,d:1,e:-66.2500000000008,f:-1182.75},state:{scale:1,x:-66.2500000000008,y:-1182.75,sx:-66.2500000000008,sy:-1182.75}},o={layout:e,root:r,theme:a,view:t};export{o as default,e as layout,r as root,a as theme,t as view};
