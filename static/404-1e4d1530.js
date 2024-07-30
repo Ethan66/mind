@@ -1,0 +1,1 @@
+import{ap as e,e as c,c as n}from"./index-8c515e41.js";const o={};function r(t,a){return n(),c("div",null,"404")}const _=e(o,[["render",r],["__file","D:/Ethan/myCode/my-work/unicom-mind-map/src/views/404.vue"]]);export{_ as default};
