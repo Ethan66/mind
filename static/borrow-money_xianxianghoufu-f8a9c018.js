@@ -42,8 +42,11 @@ this.handleFirstEnjoyInit(res.data.payUseInfo) // 初始化先享后付
 `,uid:"7269f225-ac29-4cf6-b87a-96e726c6e682",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]},{data:{text:`handleSetModeStatus(this.currentMode)
 1. 双融担：可以修改金额；正常模式：默认借款金额是全部，不可修改
 2. showMember状态（是否请求会员的资源位接口）：
-   1. if(双融担)：showMember = !this.firstEnjoy.status（先享后付关闭，展示中间弹窗(易橙卡)，否则不展示）
-   2. else(正常模式)：先享后付开启时，showMember = false`,expand:!0,richText:!1,isActive:!1,uid:"76c754b6-5655-4ec5-a5d5-63c689f7195c",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]},{data:{text:`code === 1815
+   showMember默认为true，只有先享后付开启后，showMember = false，其他情况都为true
+   细分：
+     1. if(双融担)：showMember = !this.firstEnjoy.status（先享后付关闭，展示中间弹窗(易橙卡)，否则不展示）
+     2. else(正常模式)：先享后付开启时，showMember = false
+`,expand:!0,richText:!1,isActive:!1,uid:"76c754b6-5655-4ec5-a5d5-63c689f7195c",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]},{data:{text:`code === 1815
 页面：/rollback`,expand:!0,richText:!1,isActive:!1,uid:"9e5a7989-470b-4b44-a561-f8c3e357d2ac",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]},{data:{text:"输入金额",expand:!0,richText:!1,isActive:!1,uid:"71647d35-09c7-4398-9c00-260242737169",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[{data:{text:`校验金额：
 1. 替换非数字的值
 2. 校验输入金额是否满足条件：
@@ -182,4 +185,4 @@ res.data.type、res.data.url字段：
 2. type == 2 & url：自有H5
 3. type == 3 & url：原生url
 4. type == 4：回首页
-5. 其他：/borrow/money`,uid:"ac7597e8-e793-4939-96ba-bb8ccb063c92",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]}]}]},a={template:"default",config:{associativeLineTextFontSize:13,root:{fontSize:14},node:{fontSize:13},generalization:{fontSize:13},second:{fontSize:13}}},t={transform:{scaleX:1,scaleY:1,shear:0,rotate:0,translateX:-66.2500000000008,translateY:-1182.75,originX:0,originY:0,a:1,b:0,c:0,d:1,e:-66.2500000000008,f:-1182.75},state:{scale:1,x:-66.2500000000008,y:-1182.75,sx:-66.2500000000008,sy:-1182.75}},o={layout:e,root:r,theme:a,view:t};export{o as default,e as layout,r as root,a as theme,t as view};
+5. 其他：/borrow/money`,uid:"ac7597e8-e793-4939-96ba-bb8ccb063c92",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]}]}]},a={template:"default",config:{associativeLineTextFontSize:13,root:{fontSize:14},node:{fontSize:13},generalization:{fontSize:13},second:{fontSize:13}}},t={transform:{scaleX:1.4,scaleY:1.4,shear:0,rotate:0,translateX:-1134.8,translateY:1442,originX:0,originY:0,a:1.4,b:0,c:0,d:1.4,e:-1134.8,f:1442},state:{scale:1.4,x:-1134.8,y:1442,sx:-1134.8,sy:1442}},o={layout:e,root:r,theme:a,view:t};export{o as default,e as layout,r as root,a as theme,t as view};
