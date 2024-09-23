@@ -141,8 +141,8 @@ this.handleMemberBorrowTargetUserCard()
 4. 会员购买入口banner（isUsePay == 0 & !isVip）：因为有banner，所以一定是会员购买流程，直接跳链接`,uid:"1fa655db-8a81-4859-987c-6aa6b29111c2",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]},{data:{text:`先享后付后台开关：
 1. 运营后台-系统配置-会员卡快捷支付
 2. 模式：
-   1. 先付后享(金尊卡)（等于借款前置营销页）：杭金投、中原H5、长银H5
-   2. 先享后付(易橙卡)（申请借款页绑卡签约）：杭金投、中原api、长银api、大兴api
+   1. 先付后享(金尊卡)（等于借款前置营销页）：杭金投、中原H5、长银H5、锡商网贷
+   2. 先享后付(易橙卡)（申请借款页绑卡签约）：杭金投、中原api、长银api、大兴api、锡商网贷
    3. 金尊卡：锡商网贷（申请借款页从下往上弹Popup）、其他api资方（先享后付不开启，展示中间banner弹窗）
    4. 杭金投：有先享后付和先付后享模式，所以杭金投的模式是二选一，因为先享后付和先付后享是互斥关系，假如开关状态选择暂停，进入申请维护页
    5. 小程序：没有会员&&没有先享后付，先享后付通过资源位渠道不可见来控制`,expand:!0,richText:!1,isActive:!1,uid:"db92564f-be6d-4510-8d43-8359b44722ac",borderWidth:1,borderColor:"#333333",fillColor:"#666666",fontWeight:"normal",color:"#FFFFFF"},children:[]}]},{data:{text:"双融担模式",expand:!0,richText:!1,isActive:!1,uid:"f4d7d84f-6207-4cb9-b359-e418dad07165"},children:[{data:{text:`双融担模式：
@@ -185,4 +185,4 @@ res.data.type、res.data.url字段：
 2. type == 2 & url：自有H5
 3. type == 3 & url：原生url
 4. type == 4：回首页
-5. 其他：/borrow/money`,uid:"ac7597e8-e793-4939-96ba-bb8ccb063c92",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]}]}]},a={template:"default",config:{associativeLineTextFontSize:13,root:{fontSize:14},node:{fontSize:13},generalization:{fontSize:13},second:{fontSize:13}}},t={transform:{scaleX:1.4,scaleY:1.4,shear:0,rotate:0,translateX:-1134.8,translateY:1442,originX:0,originY:0,a:1.4,b:0,c:0,d:1.4,e:-1134.8,f:1442},state:{scale:1.4,x:-1134.8,y:1442,sx:-1134.8,sy:1442}},o={layout:e,root:r,theme:a,view:t};export{o as default,e as layout,r as root,a as theme,t as view};
+5. 其他：/borrow/money`,uid:"ac7597e8-e793-4939-96ba-bb8ccb063c92",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]}]}]},a={template:"default",config:{associativeLineTextFontSize:13,root:{fontSize:14},node:{fontSize:13},generalization:{fontSize:13},second:{fontSize:13}}},t={transform:{scaleX:1.2,scaleY:1.2,shear:0,rotate:0,translateX:-337.2000000000005,translateY:-1520.5000000000002,originX:0,originY:0,a:1.2,b:0,c:0,d:1.2,e:-337.2000000000005,f:-1520.5000000000002},state:{scale:1.2,x:-337.2000000000005,y:-1520.5000000000002,sx:-337.2000000000005,sy:-1520.5000000000002}},o={layout:e,root:r,theme:a,view:t};export{o as default,e as layout,r as root,a as theme,t as view};
