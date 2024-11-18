@@ -1,4 +1,4 @@
-const e="logicalStructure",t={data:{text:"小程序首页",expand:!0,isActive:!1,uid:"82745926-0fa2-41be-ab60-ecc5a33f4727"},children:[{data:{text:`调首页接口：
+const e="logicalStructure",a={data:{text:"小程序首页",expand:!0,isActive:!1,uid:"82745926-0fa2-41be-ab60-ecc5a33f4727"},children:[{data:{text:`调首页接口：
 小易金选：/mini/program/wxUser/index
 易花花：/xcx/yhh/wxUser/index
 
@@ -56,4 +56,19 @@ created：一推页面调接口判断要不要展示征信协议（接口：/app
 2. 中原API，大兴API，杭金投：允许进入
 3. 锡锡贷：1）额度失效，判断人脸是否认证，未认证先做人脸，已认证则进入锡商个人信息页；
                  2）额度有效，直接进入锡锡贷借款申请页面
-3. 锡商网贷：允许进入`,expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff",uid:"80200388-f714-4af1-a798-c5d75faa8c7c"},children:[]}]}]}]}]},{data:{text:"首页所有按钮",expand:!0,richText:!1,isActive:!1,uid:"e0543925-8f69-4cb1-8b75-94f5f3060c84"},children:[{data:{text:"都要先登录才能执行",uid:"1d178a6d-046e-4b19-b6c7-1a8dac11b9da",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]}]},a={template:"default",config:{associativeLineTextFontSize:13,root:{fontSize:14},node:{fontSize:13},generalization:{fontSize:13},second:{fontSize:13}}},d={transform:{scaleX:1,scaleY:1,shear:0,rotate:0,translateX:-534,translateY:-172,originX:0,originY:0,a:1,b:0,c:0,d:1,e:-534,f:-172},state:{scale:1,x:-534,y:-172,sx:-193,sy:-142}},r={layout:e,root:t,theme:a,view:d};export{r as default,e as layout,t as root,a as theme,d as view};
+3. 锡商网贷：允许进入`,expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff",uid:"80200388-f714-4af1-a798-c5d75faa8c7c"},children:[]}]}]}]}]},{data:{text:"首页所有按钮",expand:!0,richText:!1,isActive:!1,uid:"e0543925-8f69-4cb1-8b75-94f5f3060c84"},children:[{data:{text:"都要先登录才能执行",uid:"1d178a6d-046e-4b19-b6c7-1a8dac11b9da",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]},{data:{text:"H5跳到小程序",expand:!0,richText:!1,isActive:!1,uid:"78c19b80-f373-4d7d-925a-9566993b0af4"},children:[{data:{text:"文件：./config/wx-min-program.js\n\n调用方法：openMinProgram(type, h5Url)\n\n逻辑：\n1. 带了小程序的渠道码：\n    说明当前h5在小程序内，所以只会跳小程序的原生页，所以type是原生页面的文件名\n    window.wx.miniProgram.redirectTo({ url: `/pages/${type}/index` })\n\n2. 不带小程序的渠道码：\n    说明是纯h5，需要请求后端接口（/mini/program/getSchemeUrl）拿到schema跳转，type只能是H5\n    请求后端参数：{ backUrl: `/pages/${type}/index`,  query: `url=${encodeURIComponent(`${h5Url}`)}`}",uid:"53f8babd-3224-4e31-9fd6-ac742b0e33e1",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#009CE0",color:"#FFFFFF"},children:[]}]},{data:{text:"H5页去下载app或小程序",expand:!0,richText:!1,isActive:!1,uid:"243f0d42-f24a-44e7-8248-c5ac74b30b1a"},children:[{data:{text:`文件：/mixins/download.js
+
+逻辑：
+1. 一般在落地页使用该方法，方法指定下载某一个app，给公共方法传入appChannel，
+后端判断这个app有没有在用，没有在用返回其他appChannel或者跳小程序
+
+2. 跳app：根据appChannel选择指定的scheme前缀，拼上完整链接，绑定到iframe中，
+手机装过了对应app就直接唤起app，没有装过，2s后跳转ios应用市场或者apk安装链接
+
+接口：/mini/program/half/jump/channel
+响应数据：
+ if (data.status == '1' || data.channels.includes(channelCode)) 跳小程序
+else { data.status == 0，跳易借速贷，data.status == 2，跳易花花 }
+
+
+`,uid:"16246a4d-74a0-46dd-adbe-a503d975ca8c",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]}]},t={template:"default",config:{associativeLineTextFontSize:13,root:{fontSize:14},node:{fontSize:13},generalization:{fontSize:13},second:{fontSize:13}}},d={transform:{scaleX:1,scaleY:1,shear:0,rotate:0,translateX:202,translateY:-539,originX:0,originY:0,a:1,b:0,c:0,d:1,e:202,f:-539},state:{scale:1,x:202,y:-539,sx:202,sy:-539}},r={layout:e,root:a,theme:t,view:d};export{r as default,e as layout,a as root,t as theme,d as view};
