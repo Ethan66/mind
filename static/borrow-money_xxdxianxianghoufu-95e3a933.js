@@ -40,12 +40,9 @@ this.handleFirstEnjoyInit(res.data.payUseInfo) // 初始化先享后付
           "payCardPrice": 价格,
           "payCardInfo": "卡说明"        }
 `,uid:"7269f225-ac29-4cf6-b87a-96e726c6e682",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]},{data:{text:`handleSetModeStatus(this.currentMode)
-1. 双融担：可以修改金额；正常模式：默认借款金额是全部，不可修改
-2. showMember状态（是否请求会员的资源位接口）：
-   showMember默认为true，只有先享后付开启后，showMember = false，其他情况都为true
-   细分：
-     1. if(双融担)：showMember = !this.firstEnjoy.status（先享后付关闭，展示中间弹窗(易橙卡)，否则不展示）
-     2. else(正常模式)：先享后付开启时，showMember = false
+1. 输入满额度金额
+2. 改变showMember状态（是否请求会员的资源位接口）：
+   只有先享后付开启后，showMember = false，其他情况都为true
 `,expand:!0,richText:!1,isActive:!1,uid:"76c754b6-5655-4ec5-a5d5-63c689f7195c",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]},{data:{text:`code === 1815
 页面：/rollback`,expand:!0,richText:!1,isActive:!1,uid:"9e5a7989-470b-4b44-a561-f8c3e357d2ac",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]},{data:{text:"输入金额",expand:!0,richText:!1,isActive:!1,uid:"71647d35-09c7-4398-9c00-260242737169",borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[{data:{text:`校验金额：
 1. 替换非数字的值
@@ -76,15 +73,15 @@ quey.repay：最后提交借款用的，包含amount、borrowNper、bankCard、r
 获取资源位接口：/app/getApplyBorrowPage
 作用：
 1. 易橙卡信息（根据this.showMember==true展示）
-2. 获取中间弹窗资源位信息、banner资源位信息、展示中间弹窗
+2. 获取非会员弹窗(中间弹窗)资源位（图片和跳转地址）、banner资源位信息（图片和跳转地址）、展示非会员弹窗
 
 响应数据：
 1. memberLevel：当前用户等级，0是非会员
 2. list：
-   1. code：applyBannerList（banner资源位）this.memberData = 值
-   2. code：on_vip_borrow_apply（弹窗资源位）this.memberDialogData = 值
+   1. code：applyBannerList（banner资源位）this.memberData = res.data.list[applyBannerList].list[0]
+   2. code：on_vip_borrow_apply（非会员弹窗资源位）this.memberDialogData =res.data.list[on_vip_borrow_apply].list[0] 
 
-memberLevel == 0 & this.memberDialogData.imageUrl，展示弹窗
+memberLevel == 0 & this.memberDialogData.imageUrl，展示非会员弹窗(中间弹窗)
 
 this.handleMemberBorrowTargetUser(true)
 `,uid:"94d226ae-1860-4d0b-8ff0-33e51b5d4e07",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]},{data:{text:`handleMemberBorrowTargetUser()
@@ -131,7 +128,7 @@ this.handleMemberBorrowTargetUserCard()
     2. data.bindCardNo：签约号
 3. 提交接口：/member/prepay/sign/confirm
    传参：   borrowNo, pageType: reqPageType, modelType, bindUserCardId, bindCardNo, cardNo: bankcardNumber, validCode
-   响应参数：   1. data.respDesc：三方返回错我数据
+   响应参数：   1. data.respDesc：三方返回错误数据
 `,range:[0,2],uid:"ae47d7c3-9ead-47d4-8d9a-81b81d8e7eb1",expand:!0,isActive:!1}]},children:[{data:{text:`申请借款：
 1. props: bankcardNumber、pageType
 2. 用pageType换reqPageType =‘BORROW_APPLY_PAGE’
@@ -238,4 +235,4 @@ res.data.type、res.data.url字段：
 2. type == 2 & url：自有H5
 3. type == 3 & url：原生url
 4. type == 4：回首页
-5. 其他：/borrow/money`,uid:"ac7597e8-e793-4939-96ba-bb8ccb063c92",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]}]}]},a={template:"default",config:{associativeLineTextFontSize:13,root:{fontSize:14},node:{fontSize:13},generalization:{fontSize:13},second:{fontSize:13}}},t={transform:{scaleX:.6000000000000001,scaleY:.6000000000000001,shear:0,rotate:0,translateX:-145.6000000000003,translateY:404.7999999999996,originX:0,originY:0,a:.6000000000000001,b:0,c:0,d:.6000000000000001,e:-145.6000000000003,f:404.7999999999996},state:{scale:.6000000000000001,x:-145.6000000000003,y:404.7999999999996,sx:-155.6000000000003,sy:141.7999999999996}},o={layout:e,root:r,theme:a,view:t};export{o as default,e as layout,r as root,a as theme,t as view};
+5. 其他：/borrow/money`,uid:"ac7597e8-e793-4939-96ba-bb8ccb063c92",expand:!0,richText:!1,isActive:!1,borderWidth:1,borderColor:"#549688",fillColor:"#fff"},children:[]}]}]}]},a={template:"default",config:{associativeLineTextFontSize:13,root:{fontSize:14},node:{fontSize:13},generalization:{fontSize:13},second:{fontSize:13}}},t={transform:{scaleX:1,scaleY:1,shear:0,rotate:0,translateX:0,translateY:0,originX:0,originY:0,a:1,b:0,c:0,d:1,e:0,f:0},state:{scale:1,x:0,y:0,sx:0,sy:0}},o={layout:e,root:r,theme:a,view:t};export{o as default,e as layout,r as root,a as theme,t as view};
